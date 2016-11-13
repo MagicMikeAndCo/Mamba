@@ -4,9 +4,9 @@ using System.Collections;
 public class KeyboardMovement : MonoBehaviour {
 
 	public float speed;
-	private Vector2 dir = Vector2.up;
-	private bool horizontal = true;
-	private bool vertical = false;
+	private Vector2 dir = Vector2.right;
+	private bool horizontal = false;
+	private bool vertical = true;
 
 	void Update(){
 		if (Input.GetKey (KeyCode.RightArrow) && horizontal) {
