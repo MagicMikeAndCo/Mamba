@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GizmoUtils.cs" />
      <Compile Include="Assets\Scripts\Movement\KeyboardMovement.cs" />
+     <Compile Include="Assets\Scripts\Spawners\FoodSpawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
