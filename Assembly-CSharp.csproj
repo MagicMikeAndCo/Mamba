@@ -45,8 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Behaviours\AbstractBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\GrowingBehaviour.cs" />
      <Compile Include="Assets\Scripts\CollisionFood.cs" />
      <Compile Include="Assets\Scripts\GizmoUtils.cs" />
+     <Compile Include="Assets\Scripts\LogCollision.cs" />
+     <Compile Include="Assets\Scripts\Manager\TailManager.cs" />
      <Compile Include="Assets\Scripts\SnakeMovement.cs" />
      <Compile Include="Assets\Scripts\Spawners\FoodSpawner.cs" />
  <Reference Include="UnityEngine.UI">

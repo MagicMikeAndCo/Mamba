@@ -22,7 +22,7 @@ public class FoodSpawner : MonoBehaviour {
 		return instance;
 	}
 
-	Vector2 GetRandomPositionInZone() {
+	public Vector2 GetRandomPositionInZone() {
 		float randomX, randomY;
 		Vector2 pos;
 		Vector3 posSnake = GameObject.FindGameObjectWithTag ("Player").transform.position;
