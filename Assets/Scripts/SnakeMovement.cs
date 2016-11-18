@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
-public class KeyboardMovement : MonoBehaviour {
+public class SnakeMovement : MonoBehaviour {
 
 	public float speed;
 	private Vector2 dir = Vector2.right;
 	private bool horizontal = false;
 	private bool vertical = true;
+	private List<Transform> tail = new List<Transform>();
 
 	void Update(){
 		if (Input.GetKey (KeyCode.RightArrow) && horizontal) {
@@ -34,8 +37,13 @@ public class KeyboardMovement : MonoBehaviour {
 	}
 
 	void Move(){
-		Vector2 pos = transform.position;
-		pos += dir * speed * Time.deltaTime;
-		transform.position = pos;
+		Vector2 currentPos = transform.position;  
+		transform.position = currentPos + dir * speed * Time.deltaTime;
+		if (tail.Count > 0) {
+			tail.Last ().position = currentPos; 
+			tail.Insert(0, tail.Last());
+			tail.RemoveAt(tail.Count - 1);
+		
+		}
 	}
 }

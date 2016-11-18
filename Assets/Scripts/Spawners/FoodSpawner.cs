@@ -14,12 +14,11 @@ public class FoodSpawner : MonoBehaviour {
 	}
 
 	public GameObject Spawn() {
-		GameObject instance = (GameObject) Instantiate(prefab);
+		GameObject instance = (GameObject) Instantiate(prefab, GetRandomPositionInZone(), Quaternion.identity);
 		instance.layer = gameObject.layer;
 		if (parentObject) {
 			instance.transform.SetParent (parentObject.transform);
 		}
-		instance.transform.position = GetRandomPositionInZone ();
 		return instance;
 	}
 
@@ -28,8 +27,8 @@ public class FoodSpawner : MonoBehaviour {
 		Vector2 pos;
 		Vector3 posSnake = GameObject.FindGameObjectWithTag ("Player").transform.position;
 		do {
-			randomX = Random.Range (spawnZone.xMin, spawnZone.xMax);
-			randomY = Random.Range (spawnZone.yMin, spawnZone.yMax);
+			randomX = (int) Random.Range (spawnZone.xMin, spawnZone.xMax);
+			randomY = (int) Random.Range (spawnZone.yMin, spawnZone.yMax);
 		} while(false); // To do
 
 		return new Vector2 (randomX, randomY);
