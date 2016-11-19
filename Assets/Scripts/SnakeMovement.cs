@@ -5,7 +5,7 @@ using System.Collections;
 public class SnakeMovement : MonoBehaviour {
 
 	public float speed;
-	private Vector2 dir = Vector2.right;
+	private Vector2 direction = Vector2.right;
 	private bool horizontal = false;
 	private bool vertical = true;
 
@@ -13,22 +13,22 @@ public class SnakeMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.RightArrow) && horizontal) {
 			horizontal = false;
 			vertical = true;
-			dir = Vector2.right;
+			direction = Vector2.right;
 		}
 		else if (Input.GetKey (KeyCode.DownArrow) && vertical) {
 			horizontal = true;
 			vertical = false;
-			dir = -Vector2.up;
+			direction = -Vector2.up;
 		}
 		else if (Input.GetKey (KeyCode.LeftArrow) && horizontal) {
 			horizontal = false;
 			vertical = true;
-			dir = -Vector2.right;
+			direction = -Vector2.right;
 		}
 		else if (Input.GetKey (KeyCode.UpArrow) && vertical) {
 			horizontal = true;
 			vertical = false;
-			dir = Vector2.up;
+			direction = Vector2.up;
 		}
 
 		HeadMove ();
@@ -36,9 +36,9 @@ public class SnakeMovement : MonoBehaviour {
 		
 	void HeadMove(){	
 		Vector2 currentPos = transform.position;  
-		transform.position = currentPos + dir * speed * Time.deltaTime;
+		transform.position = currentPos + direction * speed * Time.deltaTime;
 		TailManager tailManager = GetComponentInParent<TailManager> ();
-		tailManager.TailMove (currentPos);
+		tailManager.TailMove (transform.position, direction, speed);
 	}
 
 }
