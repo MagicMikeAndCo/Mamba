@@ -5,14 +5,12 @@
       <File FileName="Assets\Scripts\Spawners\FoodSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GizmoUtils.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CollisionFood.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="8" Column="43" />
-      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="41" Column="28" />
+      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="53" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="C:\Users\fabio\Desktop\UnityProjects\Mamba\Assets\Scripts\SnakeMovement.cs" line="35" column="3" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

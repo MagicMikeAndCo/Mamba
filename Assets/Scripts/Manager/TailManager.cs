@@ -30,12 +30,13 @@ public class TailManager : MonoBehaviour {
 		//Debug.Log(direction.x + " " + direction.y);
 		//Debug.Log (headPos.x == pos.x);
 		//Debug.Log (headPos.y == pos.y);
-		foreach(Transform tail in tails){
-			Vector2 newPos = new Vector2(tail.position.x, tail.position.y);
+		Vector2 newPos;
+		for(int i = 0; i < tails.Count; i++){
+			newPos = new Vector2(tails.ElementAt(i).position.x, tails.ElementAt(i).position.y);
 			if (headPos.x == newPos.x || headPos.y == newPos.y) {
 				//Debug.Log ("1if " + Mathf.Abs (headPos.x - pos.x) + " " + Mathf.Abs (headPos.y - pos.y));
 				newPos += direction * speed * Time.deltaTime;
-				tail.position = newPos;
+				tails.ElementAt(i).position = newPos;
 			} 
 			else if ((direction.x != 0 && Mathf.Abs (headPos.x - newPos.x) >= 10) || (direction.y != 0 && Mathf.Abs (headPos.y - newPos.y) >= 10)) {
 				//Debug.Log ("1elseif " + Mathf.Abs (headPos.x - pos.x) + " " + Mathf.Abs (headPos.y - pos.y));
@@ -47,14 +48,19 @@ public class TailManager : MonoBehaviour {
 					newPos.x = headPos.x;	
 
 				}
-				tail.position = newPos;
+				Vector2 oldPos;
+				for (int j = i + 1; j < tails.Count; j++) {
+					oldPos = new Vector2(tails.ElementAt(j-1).position.x, tails.ElementAt(j-1).position.y);
+					tails.ElementAt (j).position = oldPos;
+				}
+				tails.ElementAt(i).position = newPos;
 
 			}
 			else {
 				//Debug.Log("1else");
 				//To do rotation newPos
 			}	
-			headPos = tail.position;
+			headPos = tails.ElementAt(i).position;
 		}
 
 
