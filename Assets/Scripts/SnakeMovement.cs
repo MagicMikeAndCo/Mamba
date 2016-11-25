@@ -8,6 +8,7 @@ public class SnakeMovement : MonoBehaviour {
 	private Vector2 direction = Vector2.right;
 	private bool horizontal = false;
 	private bool vertical = true;
+	private Vector2 lastHeadPos;
 
 	void Start(){
 		StartCoroutine (Move ());
@@ -39,7 +40,8 @@ public class SnakeMovement : MonoBehaviour {
 		
 	void HeadMove(){	
 		TailManager tailManager = GetComponentInParent<TailManager> ();
-		Vector2 currentPos = transform.position;  
+		Vector2 currentPos = transform.position;
+		tailManager.SetLastHeadPosition (currentPos);
 		transform.position = currentPos + direction * 10;
 		tailManager.TailMove ();
 	}

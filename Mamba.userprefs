@@ -1,11 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CollisionFood.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SnakeMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="43" Column="51" />
-      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="24" Column="37" />
-      <File FileName="..\IPLShooter\Assets\Scripts\CamShake.cs" Line="50" Column="1" />
-      <File FileName="..\IPLShooter\Assets\Scripts\Spawners\SimpleSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="45" Column="51" />
+      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="33" Column="39" />
       <File FileName="Assets\Scripts\CollisionFood.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
