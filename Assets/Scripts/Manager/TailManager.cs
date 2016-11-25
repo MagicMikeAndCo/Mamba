@@ -8,13 +8,11 @@ public class TailManager : MonoBehaviour {
 	public GameObject tailPrefab;
 	public GameObject head;
 	public GameObject firstTail;
-	public GameObject secondTail;
 	public GameObject parent;
 	private Vector2 lastHeadPosition;
 
 	void OnEnable(){
-		//Debug.Log (firstTail.transform.localPosition);
-		//Debug.Log (secondTail.transform.localPosition);
+		tails.Add (firstTail.transform);
 	}
 
 	public void AddList(){
@@ -28,12 +26,10 @@ public class TailManager : MonoBehaviour {
 
 		
 	public void TailMove(){
-		if (tails.Count != 0) {
-			Transform lastPos = tails [tails.Count - 1];
-			lastPos.position = lastHeadPosition;
-			tails.Insert (0, lastPos);
-			tails.RemoveAt (tails.Count - 1);
-		}
+		Transform lastPos = tails [tails.Count - 1];
+		lastPos.position = lastHeadPosition;
+		tails.Insert (0, lastPos);
+		tails.RemoveAt (tails.Count - 1);
 	}
 
 	public void SetLastHeadPosition(Vector2 lastPos){
