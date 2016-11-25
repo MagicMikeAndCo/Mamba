@@ -9,6 +9,10 @@ public class SnakeMovement : MonoBehaviour {
 	private bool horizontal = false;
 	private bool vertical = true;
 
+	void Start(){
+		StartCoroutine (Move ());
+	}
+
 	void Update(){
 		if (Input.GetKey (KeyCode.RightArrow) && horizontal) {
 			horizontal = false;
@@ -30,15 +34,24 @@ public class SnakeMovement : MonoBehaviour {
 			vertical = false;
 			direction = Vector2.up;
 		}
-
-		HeadMove ();
+			
 	}
 		
 	void HeadMove(){	
-		Vector2 currentPos = transform.position;  
-		transform.position = currentPos + direction * speed * Time.deltaTime;
 		TailManager tailManager = GetComponentInParent<TailManager> ();
-		tailManager.TailMove (transform.position, direction, speed);
+		Vector2 currentPos = transform.position;  
+		transform.position = currentPos + direction * 10;
+		tailManager.TailMove ();
 	}
+
+
+	private IEnumerator Move(){
+		while(true){
+			HeadMove ();
+			yield return new WaitForSeconds(speed);
+		}
+
+	}
+
 
 }
