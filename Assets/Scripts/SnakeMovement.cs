@@ -9,30 +9,35 @@ public class SnakeMovement : MonoBehaviour {
 	private bool horizontal = false;
 	private bool vertical = true;
 	private Vector2 lastHeadPos;
+	private bool keyPressed = false;
 
 	void Start(){
 		StartCoroutine (Move ());
 	}
 
 	void Update(){
-		if (Input.GetKey (KeyCode.RightArrow) && horizontal) {
+		if (!keyPressed && Input.GetKey (KeyCode.RightArrow) && horizontal) {
 			horizontal = false;
 			vertical = true;
+			keyPressed = true;
 			direction = Vector2.right;
 		}
-		else if (Input.GetKey (KeyCode.DownArrow) && vertical) {
+		else if (!keyPressed && Input.GetKey (KeyCode.DownArrow) && vertical) {
 			horizontal = true;
 			vertical = false;
+			keyPressed = true;
 			direction = -Vector2.up;
 		}
-		else if (Input.GetKey (KeyCode.LeftArrow) && horizontal) {
+		else if (!keyPressed && Input.GetKey (KeyCode.LeftArrow) && horizontal) {
 			horizontal = false;
 			vertical = true;
+			keyPressed = true;
 			direction = -Vector2.right;
 		}
-		else if (Input.GetKey (KeyCode.UpArrow) && vertical) {
+		else if (!keyPressed && Input.GetKey (KeyCode.UpArrow) && vertical) {
 			horizontal = true;
 			vertical = false;
+			keyPressed = true;
 			direction = Vector2.up;
 		}
 			
@@ -51,7 +56,7 @@ public class SnakeMovement : MonoBehaviour {
 	private IEnumerator Move(){
 		while(true){
 			HeadMove ();
-
+			keyPressed = false;
 			yield return new WaitForSeconds(speed);
 		}
 
