@@ -43,6 +43,7 @@ public class SnakeMovement : MonoBehaviour {
 		Vector2 currentPos = transform.position;
 		tailManager.SetLastHeadPosition (currentPos);
 		transform.position = currentPos + direction * 10;
+		tailManager.SetHeadRotation (transform ,direction);
 		tailManager.TailMove ();
 	}
 
@@ -50,6 +51,7 @@ public class SnakeMovement : MonoBehaviour {
 	private IEnumerator Move(){
 		while(true){
 			HeadMove ();
+
 			yield return new WaitForSeconds(speed);
 		}
 
