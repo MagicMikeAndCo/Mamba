@@ -47,7 +47,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Behaviours\AbstractBehaviour.cs" />
      <Compile Include="Assets\Scripts\Behaviours\GrowingBehaviour.cs" />
+     <Compile Include="Assets\Scripts\CollisionBorder.cs" />
      <Compile Include="Assets\Scripts\CollisionFood.cs" />
+     <Compile Include="Assets\Scripts\CollisionTail.cs" />
      <Compile Include="Assets\Scripts\GizmoUtils.cs" />
      <Compile Include="Assets\Scripts\LogCollision.cs" />
      <Compile Include="Assets\Scripts\Manager\TailManager.cs" />
