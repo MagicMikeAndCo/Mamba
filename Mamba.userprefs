@@ -1,10 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\TailManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CollisionBorder.cs">
     <Files>
-      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="45" Column="51" />
-      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="37" Column="3" />
-      <File FileName="Assets\Scripts\CollisionFood.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CollisionFood.cs" Line="8" Column="41" />
+      <File FileName="Assets\Scripts\CollisionBorder.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\CollisionTail.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\Spawners\FoodSpawner.cs" Line="34" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
