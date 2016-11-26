@@ -2,13 +2,11 @@
 using System.Collections;
 
 public class CollisionBorder : MonoBehaviour {
-	
-	public GameObject toDestroy;
 	public string tag;
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.CompareTag (tag)) {
-			Destroy (toDestroy);
+			Destroy (gameObject.transform.parent.gameObject);
 			Debug.Log("GAME OVER");
 		}
 

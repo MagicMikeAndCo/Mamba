@@ -8,13 +8,20 @@ public class FoodSpawner : MonoBehaviour {
 	public Rect spawnZone;
 	public bool showGizmo;
 	public Color gizmoColor;
+	public float minDistance;
 
 	void Start () {
 		Spawn ();
 	}
 
 	public GameObject Spawn() {
-		GameObject instance = (GameObject) Instantiate(prefab, GetRandomPositionInZone(), Quaternion.identity);
+		Vector2 pos = GetRandomPositionInZone ();
+		if (pos == Vector2.zero) {
+			new WaitForEndOfFrame ();
+			Debug.Log ("Waiting next Frame");
+			Spawn ();
+		}
+		GameObject instance = (GameObject) Instantiate(prefab, pos, Quaternion.identity);
 		instance.layer = gameObject.layer;
 		if (parentObject) {
 			instance.transform.SetParent (parentObject.transform);
@@ -24,14 +31,18 @@ public class FoodSpawner : MonoBehaviour {
 
 	public Vector2 GetRandomPositionInZone() {
 		float randomX, randomY;
-		Vector2 pos;
-		Vector3 posSnake = GameObject.FindGameObjectWithTag ("Player").transform.position;
-		do {
+		int maxAttempt = 5;
+		for(int i = 0; i < maxAttempt; i++){
 			randomX = (int) Random.Range (spawnZone.xMin, spawnZone.xMax);
 			randomY = (int) Random.Range (spawnZone.yMin, spawnZone.yMax);
-		} while(false); // To do
+			Vector2 pos = new Vector2(randomX, randomY);
+			if(!Physics2D.OverlapCircle(pos, minDistance)){
+				return pos;
+			}
+			Debug.Log ("Spawn Failed " + i);
+		}
 
-		return new Vector2 (randomX, randomY);
+		return Vector2.zero;
 	}
 
 	void OnDrawGizmos(){
