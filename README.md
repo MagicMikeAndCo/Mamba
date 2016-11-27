@@ -13,5 +13,5 @@ A Snake-like game made for a school project.
 - [ ] Sometimes the snake go through the apple or the borders
 - [ ] Sometimes the apple spawn behind the borders
 - [x] Can't go on the last col on the right
-- [x] When 2 keys are pressed almost simulteniously, the snake can die.
+- [x] When 2 keys are pressed almost simultaniously, the snake can die.
 
