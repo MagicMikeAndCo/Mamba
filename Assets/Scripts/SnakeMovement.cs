@@ -49,7 +49,7 @@ public class SnakeMovement : MonoBehaviour {
 		tailManager.SetLastHeadPosition (currentPos);
 		transform.position = currentPos + direction * 10;
 		tailManager.SetHeadRotation (transform ,direction);
-		tailManager.TailMove ();
+		tailManager.TailMove (gameObject.transform.position);
 	}
 
 

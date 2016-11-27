@@ -25,7 +25,7 @@ public class TailManager : MonoBehaviour {
 	}
 
 		
-	public void TailMove(){
+	public void TailMove(Vector2 headPos){
 		Transform penultimatePos;
 		Transform lastPos;
 		if(tails.Count > 1){
@@ -35,12 +35,14 @@ public class TailManager : MonoBehaviour {
 			penultimatePos.position = lastHeadPosition;
 			tails.Insert (0, penultimatePos);
 			tails.RemoveAt (tails.Count - 2);
+			correctLastTailPosition (tails[tails.Count - 2].position);
 		}
 		else if(tails.Count == 1){
 			lastPos = tails [tails.Count - 1];
 			lastPos.position = lastHeadPosition;
 			tails.Insert (0, lastPos);
 			tails.RemoveAt (tails.Count - 1);
+			correctLastTailPosition (headPos);
 		}
 
 
@@ -62,6 +64,25 @@ public class TailManager : MonoBehaviour {
 		}
 		else if (direction == Vector2.right){
 			head.eulerAngles = new Vector3(0, 0, 90);
+		}
+	}
+
+
+	private void correctLastTailPosition(Vector2 lastTailPos){
+		Transform endTail = tails [tails.Count - 1];
+		Vector2 endTailPos = endTail.position;
+		if (endTailPos.x == lastTailPos.x) {
+			if (endTailPos.y < lastTailPos.y) {
+				endTail.eulerAngles = new Vector3 (0, 0, -90); 
+			} else {
+				endTail.eulerAngles = new Vector3 (0, 0, 90);
+			}
+		} else {
+			if (endTailPos.x < lastTailPos.x) {
+				endTail.eulerAngles = new Vector3 (0, 0, 180);
+			} else {
+				endTail.eulerAngles = new Vector3 (0, 0, 360);
+			}
 		}
 	}
 
