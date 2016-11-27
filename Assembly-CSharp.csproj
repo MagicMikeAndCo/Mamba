@@ -54,8 +54,10 @@
      <Compile Include="Assets\Scripts\EventsManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GizmoUtils.cs" />
+     <Compile Include="Assets\Scripts\KeepPlaying.cs" />
      <Compile Include="Assets\Scripts\LogCollision.cs" />
      <Compile Include="Assets\Scripts\Manager\TailManager.cs" />
+     <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\SnakeMovement.cs" />
      <Compile Include="Assets\Scripts\Spawners\FoodSpawner.cs" />
  <Reference Include="UnityEngine.UI">
