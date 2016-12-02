@@ -9,10 +9,12 @@ public class CollisionFood : MonoBehaviour {
 		if(col.gameObject.CompareTag(prefab.tag)){
 			FoodSpawner foodSpawner = col.gameObject.GetComponentInParent<FoodSpawner> ();
 			if (foodSpawner) {
-				col.gameObject.transform.position = foodSpawner.GetRandomPositionInZone ();
+				foodSpawner.Spawn();
 			}
 			TailManager tailManager = gameObject.GetComponentInParent<TailManager> ();
 			tailManager.AddList ();
+			SpecialFoodManager specialFoodManager = col.gameObject.GetComponentInParent<SpecialFoodManager> ();
+			specialFoodManager.IncrementEatenFood ();
 		}
 	
 	}

@@ -1,9 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\TailManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TimerProgressionBar.cs">
     <Files>
-      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="52" Column="56" />
-      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="40" Column="29" />
+      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\SpecialFoodManager.cs" Line="17" Column="34" />
+      <File FileName="Assets\Scripts\CollisionFood.cs" Line="12" Column="25" />
+      <File FileName="Assets\Scripts\Manager\EventsManager.cs" Line="7" Column="22" />
+      <File FileName="Assets\Scripts\Spawners\FoodSpawner.cs" Line="25" Column="10" />
+      <File FileName="Assets\Scripts\Manager\DeathManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Behaviours\GameOverBehaviour.cs" Line="11" Column="27" />
+      <File FileName="Assets\Scripts\TimerProgressionBar.cs" Line="31" Column="42" />
+      <File FileName="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" Line="60" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

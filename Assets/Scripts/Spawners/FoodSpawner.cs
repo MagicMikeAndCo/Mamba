@@ -9,23 +9,31 @@ public class FoodSpawner : MonoBehaviour {
 	public bool showGizmo;
 	public Color gizmoColor;
 	public float minDistance;
+	private GameObject instance;
 
 	void Start () {
-		Spawn ();
-	}
-
-	public GameObject Spawn() {
-		Vector2 pos = GetRandomPositionInZone ();
-		if (pos == Vector2.zero) {
-			new WaitForEndOfFrame ();
-			Debug.Log ("Waiting next Frame");
-			Spawn ();
-		}
-		GameObject instance = (GameObject) Instantiate(prefab, pos, Quaternion.identity);
+		instance = (GameObject) Instantiate(prefab);
 		instance.layer = gameObject.layer;
 		if (parentObject) {
 			instance.transform.SetParent (parentObject.transform);
 		}
+
+		Spawn (instance);
+	}
+
+	public GameObject Spawn(){
+		return Spawn (instance);
+	}
+
+	public GameObject Spawn(GameObject instance) {
+		Vector2 pos = GetRandomPositionInZone ();
+		if (pos == Vector2.zero) {
+			new WaitForEndOfFrame ();
+			Debug.Log ("Waiting next Frame");
+			return Spawn (instance);
+		}
+		instance.transform.position = pos;
+
 		return instance;
 	}
 
