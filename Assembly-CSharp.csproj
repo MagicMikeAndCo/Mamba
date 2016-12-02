@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Behaviours\GameOverBehaviour.cs" />
      <Compile Include="Assets\Scripts\CollisionBorder.cs" />
      <Compile Include="Assets\Scripts\CollisionFood.cs" />
+     <Compile Include="Assets\Scripts\CollisionSpecialFood.cs" />
      <Compile Include="Assets\Scripts\CollisionTail.cs" />
      <Compile Include="Assets\Scripts\GizmoUtils.cs" />
      <Compile Include="Assets\Scripts\KeepPlaying.cs" />
@@ -59,9 +60,9 @@
      <Compile Include="Assets\Scripts\Manager\DeathManager.cs" />
      <Compile Include="Assets\Scripts\Manager\EventsManager.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\MusicManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SpecialFoodManager.cs" />
      <Compile Include="Assets\Scripts\Manager\TailManager.cs" />
-     <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\SnakeMovement.cs" />
      <Compile Include="Assets\Scripts\Spawners\FoodSpawner.cs" />
      <Compile Include="Assets\Scripts\TimerProgressionBar.cs" />

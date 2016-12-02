@@ -24,7 +24,6 @@ public class SpecialFoodManager : MonoBehaviour {
 	}
 
 	public void Disable(){
-		
 		prefab.SetActive (false);
 		progressBar.SetActive (false);
 	}
