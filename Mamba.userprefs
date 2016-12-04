@@ -1,17 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CollisionSpecialFood.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Manager\TailManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Manager\SpecialFoodManager.cs" Line="17" Column="34" />
-      <File FileName="Assets\Scripts\CollisionFood.cs" Line="5" Column="2" />
-      <File FileName="Assets\Scripts\Manager\EventsManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Spawners\FoodSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Manager\DeathManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Manager\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Behaviours\GameOverBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TimerProgressionBar.cs" Line="47" Column="3" />
-      <File FileName="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" Line="60" Column="45" />
-      <File FileName="Assets\Scripts\CollisionSpecialFood.cs" Line="12" Column="4" />
+      <File FileName="Assets\Scripts\Manager\SpecialFoodManager.cs" Line="32" Column="27" />
+      <File FileName="Assets\Scripts\Spawners\FoodSpawner.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\SnakeMovement.cs" Line="2" Column="25" />
+      <File FileName="Assets\Scripts\Manager\TailManager.cs" Line="16" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -8,11 +8,13 @@ public class TailManager : MonoBehaviour {
 	public GameObject tailPrefab;
 	public GameObject head;
 	public GameObject firstTail;
+	public GameObject endTail;
 	public GameObject parent;
 	private Vector2 lastHeadPosition;
 
 	void OnEnable(){
 		tails.Add (firstTail.transform);
+		tails.Add (endTail.transform);
 	}
 
 	public void AddList(){
@@ -28,24 +30,13 @@ public class TailManager : MonoBehaviour {
 	public void TailMove(Vector2 headPos){
 		Transform penultimatePos;
 		Transform lastPos;
-		if(tails.Count > 1){
-			lastPos = tails [tails.Count - 1];
-			lastPos.position = tails[tails.Count - 2].position;
-			penultimatePos = tails [tails.Count - 2];
-			penultimatePos.position = lastHeadPosition;
-			tails.Insert (0, penultimatePos);
-			tails.RemoveAt (tails.Count - 2);
-			correctLastTailPosition (tails[tails.Count - 2].position);
-		}
-		else if(tails.Count == 1){
-			lastPos = tails [tails.Count - 1];
-			lastPos.position = lastHeadPosition;
-			tails.Insert (0, lastPos);
-			tails.RemoveAt (tails.Count - 1);
-			correctLastTailPosition (headPos);
-		}
-
-
+		lastPos = tails [tails.Count - 1];
+		lastPos.position = tails[tails.Count - 2].position;
+		penultimatePos = tails [tails.Count - 2];
+		penultimatePos.position = lastHeadPosition;
+		tails.Insert (0, penultimatePos);
+		tails.RemoveAt (tails.Count - 2);
+		correctLastTailPosition (tails[tails.Count - 2].position);
 	}
 
 	public void SetLastHeadPosition(Vector2 lastPos){
