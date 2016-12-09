@@ -62,5 +62,13 @@ public class SnakeMovement : MonoBehaviour {
 
 	}
 
+	public void setSpeed(float speed){
+		this.speed = speed;
+	}
+
+	public float getSpeed(){
+		return speed;
+	}
+
 
 }

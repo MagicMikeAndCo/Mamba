@@ -7,18 +7,18 @@ public class TimerProgressionBar : MonoBehaviour
 	ProgressBarBehaviour BarBehaviour;
 	float UpdateDelay = 0.1f;
 	float timer = 5f;
-	int i = 0;
+	int timeElapsed = 0;
 
 	public void OnEnable(){
-		StartCoroutine ("blabla");
+		timeElapsed = 0;
+		StartCoroutine ("Timer");
 		BarBehaviour.TransitoryValue = 0;
 		BarBehaviour.Value = 0;
-
-
 	}
 
 	public void OnDisable(){
-		StopCoroutine ("blabla");
+		
+		StopCoroutine ("Timer");
 
 		//BarBehaviour.DecrementValue(7220);
 
@@ -26,23 +26,28 @@ public class TimerProgressionBar : MonoBehaviour
 
 
 
-	IEnumerator blabla ()
+	IEnumerator Timer ()
 	{
 		BarBehaviour = GetComponent<ProgressBarBehaviour>();
 		while (true)
 		{
 			yield return new WaitForSeconds(UpdateDelay / timer);
 			BarBehaviour.Value += 1f;
-			print("new value: " + BarBehaviour.Value);
-			i++;
+			timeElapsed += 1;
+		//	print("new value: " + BarBehaviour.Value);
+
 		}
 
+	}
+
+	public int getTime(){
+		return timeElapsed;
 	}
 
 
 	public void Disable(){
 		if (BarBehaviour.isDone) {
-			print("new value: " + BarBehaviour.Value);
+			//print("new value: " + BarBehaviour.Value);
 		}
 	}
 

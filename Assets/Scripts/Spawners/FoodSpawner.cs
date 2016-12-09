@@ -12,13 +12,10 @@ public class FoodSpawner : MonoBehaviour {
 	private GameObject instance;
 
 	void Start () {
-		instance = (GameObject) Instantiate(prefab);
-		instance.layer = gameObject.layer;
-		if (parentObject) {
-			instance.transform.SetParent (parentObject.transform);
-		}
+		instance = prefab;
 
 		Spawn (instance);
+		instance.SetActive (true);
 	}
 
 	public GameObject Spawn(){
