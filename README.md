@@ -6,7 +6,7 @@ A Snake-like game made for a school project.
 
 ##To do :
 
-- [ ] Adding Score and HiScore
+- [x] Adding Score and HiScore
 
 ##Known Bugs :
 
