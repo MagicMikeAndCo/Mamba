@@ -59,12 +59,20 @@ public class FoodSpawner : MonoBehaviour {
 	}
 
 	public void SpawnPowerUp(){
-		int random = Random.Range (1, 3);
 		GameObject powerUp;
-		if(random == 1){
-			powerUp = speedUp;
-		} else{
+		if(speedUp.activeSelf){
 			powerUp = slowDown;
+		}
+		else if(slowDown.activeSelf){
+			powerUp = speedUp;
+		}
+		else{
+			int random = Random.Range (1, 3);
+			if(random == 1){
+				powerUp = speedUp;
+			} else{
+				powerUp = slowDown;
+			}
 		}
 		Spawn (powerUp);
 		powerUp.SetActive(true);
