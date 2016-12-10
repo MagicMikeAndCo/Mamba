@@ -11,6 +11,10 @@ public class CollisionSpecialFood : MonoBehaviour {
 			eventManager.Eat(); 
 			SpecialFoodManager specialFoodManager = col.gameObject.GetComponentInParent<SpecialFoodManager> ();
 			specialFoodManager.Disable ();
+			FoodSpawner foodSpawner = col.gameObject.GetComponentInParent<FoodSpawner> ();
+			if (foodSpawner) {
+				foodSpawner.SpawnPowerUp ();
+			}
 		}
 	}
 

@@ -7,6 +7,7 @@ public class CollisionPowerUp : MonoBehaviour {
 	public EventsManager eventManager;
 
 	void OnTriggerEnter2D(Collider2D col) {
-		eventManager.Eat(); 
+		eventManager.Eat();
+		gameObject.SetActive (false);
 	}
 }

@@ -7,7 +7,10 @@ public class KeepPlaying : MonoBehaviour {
 
 	void Start(){
 		music = GameObject.FindGameObjectsWithTag ("gameMusic");
-		Destroy (music[1]);
+		if (music.Length > 1) {
+			Destroy (music[1]);
+		}
+
 	}
 		
 	void Awake () {

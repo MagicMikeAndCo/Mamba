@@ -4,6 +4,7 @@ using System.Collections;
 public class SpeedManager : AbstractSingleton<SpeedManager>  {
 
 	private float speed;
+	public float minSpeed;
 	public SnakeMovement snakeMovement;
 
 	public override void Initialize (){
@@ -15,16 +16,27 @@ public class SpeedManager : AbstractSingleton<SpeedManager>  {
 	}
 
 	public void superSpeed(){
-		speedModificator (10f);
+		speedModificator (8f);
 	}
 
 	public void slowSpeed(){
-		speedModificator (-10f);
+		speedModificator (-4f);
 	}
 
 	private void speedModificator(float modifier){
-		speed -= (speed * modifier) / 100;
-		snakeMovement.setSpeed (speed);
+		float newSpeed = speed;
+		newSpeed -= ((newSpeed * modifier) / 100);
+		if (newSpeed > minSpeed) {
+			snakeMovement.setSpeed (minSpeed);
+			speed = minSpeed;
+		} else {
+			snakeMovement.setSpeed (newSpeed);
+			speed = newSpeed;
+		}
+
+		Debug.Log (speed);
+
+
 	}
 
 

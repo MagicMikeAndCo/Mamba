@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Behaviours\AbstractDieBehaviour.cs" />
      <Compile Include="Assets\Scripts\Behaviours\AbstractEatBehaviour.cs" />
      <Compile Include="Assets\Scripts\Behaviours\GameOverBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Behaviours\PlaySoundEatBehaviour.cs" />
      <Compile Include="Assets\Scripts\Behaviours\ScoreEatBehaviour.cs" />
      <Compile Include="Assets\Scripts\Behaviours\SpeedUpEatBehaviour.cs" />
      <Compile Include="Assets\Scripts\CollisionBorder.cs" />
@@ -67,9 +68,11 @@
      <Compile Include="Assets\Scripts\Manager\EventsManager.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
      <Compile Include="Assets\Scripts\Manager\MusicManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SpecialFoodManager.cs" />
      <Compile Include="Assets\Scripts\Manager\SpeedManager.cs" />
      <Compile Include="Assets\Scripts\Manager\TailManager.cs" />
+     <Compile Include="Assets\Scripts\PowerUpManager.cs" />
      <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Score\ScoreTracker.cs" />
      <Compile Include="Assets\Scripts\SnakeMovement.cs" />

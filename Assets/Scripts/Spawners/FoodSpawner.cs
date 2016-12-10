@@ -5,6 +5,8 @@ public class FoodSpawner : MonoBehaviour {
 
 	public GameObject prefab;
 	public GameObject parentObject;
+	public GameObject speedUp;
+	public GameObject slowDown;
 	public Rect spawnZone;
 	public bool showGizmo;
 	public Color gizmoColor;
@@ -55,6 +57,19 @@ public class FoodSpawner : MonoBehaviour {
 			GizmoUtils.DrawRectangle (spawnZone, gizmoColor);
 		}
 	}
+
+	public void SpawnPowerUp(){
+		int random = Random.Range (1, 3);
+		GameObject powerUp;
+		if(random == 1){
+			powerUp = speedUp;
+		} else{
+			powerUp = slowDown;
+		}
+		Spawn (powerUp);
+		powerUp.SetActive(true);
+	}
+		
 
 }
 

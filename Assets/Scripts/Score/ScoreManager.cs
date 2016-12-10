@@ -42,6 +42,8 @@ public class ScoreManager : AbstractSingleton<ScoreManager> {
 		SetScore (score + scoreDiff);
 	}
 
+
+
 	private void NotifyScoreMod(int scoreDiff) {
 		if(OnScore != null) {
 			OnScore (scoreDiff);
