@@ -9,6 +9,7 @@ public class PowerUpManager : MonoBehaviour {
 	void OnEnable(){
 		time = 0;
 		renderer = gameObject.GetComponent<SpriteRenderer> ();
+		renderer.color = new Color (255, 255, 255, 255);
 		StartCoroutine (Visibility());
 		StartCoroutine (Timer());
 	}
