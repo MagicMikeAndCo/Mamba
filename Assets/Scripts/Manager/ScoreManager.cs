@@ -23,6 +23,9 @@ public class ScoreManager : AbstractSingleton<ScoreManager> {
 
 	// Sets the score and notify listeners
 	public void SetScore(int newScore) {
+		if (newScore < 0) {
+			newScore = 0;
+		}
 		int scoreDiff = newScore - score;
 		score = newScore;
 		if (score > hiScore) {

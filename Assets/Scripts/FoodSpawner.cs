@@ -13,6 +13,7 @@ public class FoodSpawner : MonoBehaviour {
 	public Color gizmoColor;
 	public float minDistance;
 	private GameObject instance;
+	public int nbPowerUps;
 	private const int SPEED_UP = 1;
 	private const int SLOW_DOWN = 2;
 
@@ -45,7 +46,10 @@ public class FoodSpawner : MonoBehaviour {
 		for(int i = 0; i < maxAttempt; i++){
 			randomX = (int) Random.Range (spawnZone.xMin, spawnZone.xMax);
 			randomY = (int) Random.Range (spawnZone.yMin, spawnZone.yMax);
+			randomX = Mathf.Ceil (randomX / 10) * 10 + 5;
+			randomY = Mathf.Ceil (randomY / 10) * 10 + 5;
 			Vector2 pos = new Vector2(randomX, randomY);
+			Debug.Log (pos);
 			if(!Physics2D.OverlapCircle(pos, minDistance)){
 				return pos;
 			}

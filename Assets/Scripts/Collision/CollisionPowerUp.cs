@@ -7,7 +7,10 @@ public class CollisionPowerUp : MonoBehaviour {
 	public EventsManager eventManager;
 
 	void OnTriggerEnter2D(Collider2D col) {
-		eventManager.Eat();
-		gameObject.SetActive (false);
+		if(!col.gameObject.CompareTag("Explosion")){
+			eventManager.Eat();
+			gameObject.SetActive (false);
+		}
+
 	}
 }

@@ -34,7 +34,7 @@ public class SpeedManager : AbstractSingleton<SpeedManager>  {
 			speed = newSpeed;
 		}
 
-		Debug.Log (speed);
+		//Debug.Log (speed);
 
 
 	}
