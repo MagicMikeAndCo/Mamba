@@ -15,18 +15,12 @@ public class BombManager : MonoBehaviour {
 	IEnumerator Timer(){
 		yield return new WaitForSeconds (waitTime);
 		renderer.color = new Color (255, 255, 255, 0);
-		StartCoroutine (ExplosionDestroyTimer());
-		/*new WaitForSeconds (1f);
-		Debug.Log ("Coucou");
-		Destroy (instance);
-		gameObject.SetActive (false);*/
+		GameObject instance = (GameObject) Instantiate (animation, gameObject.transform.position, Quaternion.identity);
+		StartCoroutine (ExplosionDestroyTimer(instance));
 	}
 
-	IEnumerator ExplosionDestroyTimer(){
-		GameObject instance = (GameObject) Instantiate (animation, gameObject.transform.position, Quaternion.identity);
-		Debug.Log ("before");
+	IEnumerator ExplosionDestroyTimer(GameObject instance){
 		yield return new WaitForSeconds (1f);
-		Debug.Log ("after");
 		Destroy (instance);
 		gameObject.SetActive (false);
 	}
