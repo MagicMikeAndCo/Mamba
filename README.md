@@ -2,7 +2,7 @@
 
 ##Synopsys
 
-A Snake-like game made for a school project.
+A Snake-like game made for a school project with Unity 5.4.1
 
 ##To do :
 
