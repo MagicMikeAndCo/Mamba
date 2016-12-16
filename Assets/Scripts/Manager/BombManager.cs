@@ -4,6 +4,8 @@ using System.Collections;
 public class BombManager : MonoBehaviour {
 	public float waitTime;
 	public GameObject animation;
+	public SoundManager soundManager;
+	public AudioClip clip;
 	private SpriteRenderer renderer;
 
 	void OnEnable(){ 
@@ -16,6 +18,7 @@ public class BombManager : MonoBehaviour {
 		yield return new WaitForSeconds (waitTime);
 		renderer.color = new Color (255, 255, 255, 0);
 		GameObject instance = (GameObject) Instantiate (animation, gameObject.transform.position, Quaternion.identity);
+		soundManager.PlaySound (clip);
 		StartCoroutine (ExplosionDestroyTimer(instance));
 	}
 
