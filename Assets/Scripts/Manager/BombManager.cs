@@ -18,7 +18,7 @@ public class BombManager : MonoBehaviour {
 		yield return new WaitForSeconds (waitTime);
 		renderer.color = new Color (255, 255, 255, 0);
 		GameObject instance = (GameObject) Instantiate (animation, gameObject.transform.position, Quaternion.identity);
-		soundManager.PlaySound (clip);
+		soundManager.PlaySound (clip, 1f);
 		StartCoroutine (ExplosionDestroyTimer(instance));
 	}
 
