@@ -7,11 +7,14 @@ public class FoodSpawner : MonoBehaviour {
 	public GameObject parentObject;
 	public GameObject speedUp;
 	public GameObject slowDown;
+	public GameObject bomb;
 	public Rect spawnZone;
 	public bool showGizmo;
 	public Color gizmoColor;
 	public float minDistance;
 	private GameObject instance;
+	private const int SPEED_UP = 1;
+	private const int SLOW_DOWN = 2;
 
 	void Start () {
 		instance = prefab;
@@ -60,19 +63,13 @@ public class FoodSpawner : MonoBehaviour {
 
 	public void SpawnPowerUp(){
 		GameObject powerUp;
-		if(speedUp.activeSelf){
-			powerUp = slowDown;
-		}
-		else if(slowDown.activeSelf){
+		int random = Random.Range (3, 4);
+		if (random == SPEED_UP) {
 			powerUp = speedUp;
-		}
-		else{
-			int random = Random.Range (1, 3);
-			if(random == 1){
-				powerUp = speedUp;
-			} else{
-				powerUp = slowDown;
-			}
+		} else if (random == SLOW_DOWN) {
+			powerUp = slowDown;
+		} else {
+			powerUp = bomb;
 		}
 		Spawn (powerUp);
 		powerUp.SetActive(true);

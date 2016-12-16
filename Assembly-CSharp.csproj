@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\GizmoUtils.cs" />
      <Compile Include="Assets\Scripts\KeepPlaying.cs" />
      <Compile Include="Assets\Scripts\LogCollision.cs" />
+     <Compile Include="Assets\Scripts\Manager\BombManager.cs" />
      <Compile Include="Assets\Scripts\Manager\DeathManager.cs" />
      <Compile Include="Assets\Scripts\Manager\EatManager.cs" />
      <Compile Include="Assets\Scripts\Manager\EventsManager.cs" />
