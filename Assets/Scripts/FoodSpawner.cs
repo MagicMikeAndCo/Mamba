@@ -29,8 +29,8 @@ public class FoodSpawner : MonoBehaviour {
 	}
 
 	public GameObject Spawn(GameObject instance) {
-		Vector2 pos = GetRandomPositionInZone ();
-		if (pos == Vector2.zero) {
+		Vector3 pos = GetRandomPositionInZone ();
+		if (pos == Vector3.zero) {
 			new WaitForEndOfFrame ();
 			Debug.Log ("Waiting next Frame");
 			return Spawn (instance);
@@ -40,7 +40,7 @@ public class FoodSpawner : MonoBehaviour {
 		return instance;
 	}
 
-	public Vector2 GetRandomPositionInZone() {
+	public Vector3 GetRandomPositionInZone() {
 		float randomX, randomY;
 		int maxAttempt = 5;
 		for(int i = 0; i < maxAttempt; i++){
@@ -48,7 +48,7 @@ public class FoodSpawner : MonoBehaviour {
 			randomY = (int) Random.Range (spawnZone.yMin, spawnZone.yMax);
 			randomX = Mathf.Ceil (randomX / 10) * 10 + 5;
 			randomY = Mathf.Ceil (randomY / 10) * 10 + 5;
-			Vector2 pos = new Vector2(randomX, randomY);
+			Vector3 pos = new Vector3(randomX, randomY);
 			Debug.Log (pos);
 			if(!Physics2D.OverlapCircle(pos, minDistance)){
 				return pos;
@@ -56,7 +56,7 @@ public class FoodSpawner : MonoBehaviour {
 			Debug.Log ("Spawn Failed " + i);
 		}
 
-		return Vector2.zero;
+		return Vector3.zero;
 	}
 
 	void OnDrawGizmos(){

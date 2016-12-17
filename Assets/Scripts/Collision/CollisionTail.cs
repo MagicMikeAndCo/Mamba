@@ -11,7 +11,7 @@ public class CollisionTail : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
+	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag (gameObject.tag)) {
 			Die ();
 			Destroy (gameObject.transform.parent.gameObject);

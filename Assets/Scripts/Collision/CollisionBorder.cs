@@ -11,7 +11,7 @@ public class CollisionBorder : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
+	void OnTriggerEnter(Collider col) {
 		if (col.gameObject.CompareTag (tag)) {
 			Die ();
 			Destroy (gameObject.transform.parent.gameObject);
