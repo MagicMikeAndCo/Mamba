@@ -49,11 +49,11 @@ public class FoodSpawner : MonoBehaviour {
 			randomX = Mathf.Ceil (randomX / 10) * 10 + 5;
 			randomY = Mathf.Ceil (randomY / 10) * 10 + 5;
 			Vector2 pos = new Vector2(randomX, randomY);
-			Debug.Log (pos);
+			//Debug.Log (pos);
 			if(!Physics2D.OverlapCircle(pos, minDistance)){
 				return pos;
 			}
-			Debug.Log ("Spawn Failed " + i);
+			//Debug.Log ("Spawn Failed " + i);
 		}
 
 		return Vector2.zero;

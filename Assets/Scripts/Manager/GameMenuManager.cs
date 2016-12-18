@@ -7,7 +7,7 @@ public class GameMenuManager : MonoBehaviour {
 	public string sceneToStart;
 
 	public void Play(){
-		Debug.Log ("click");
+		//Debug.Log ("click");
 		SceneManager.LoadScene (sceneToStart);
 	}
 

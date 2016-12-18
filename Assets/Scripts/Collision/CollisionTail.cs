@@ -15,7 +15,7 @@ public class CollisionTail : MonoBehaviour {
 		if (col.gameObject.CompareTag (gameObject.tag)) {
 			Die ();
 			Destroy (gameObject.transform.parent.gameObject);
-			Debug.Log("GAME OVER");
+			//Debug.Log("GAME OVER");
 		}
 	}
 

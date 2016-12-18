@@ -16,7 +16,7 @@ public class DieCollision : MonoBehaviour {
 			|| col.gameObject.CompareTag ("Explosion")) {
 			Die ();
 			Destroy (gameObject.transform.parent.gameObject);
-			Debug.Log("GAME OVER");
+			//Debug.Log("GAME OVER");
 		}
 	}
 

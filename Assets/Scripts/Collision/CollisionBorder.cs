@@ -15,7 +15,7 @@ public class CollisionBorder : MonoBehaviour {
 		if (col.gameObject.CompareTag (tag)) {
 			Die ();
 			Destroy (gameObject.transform.parent.gameObject);
-			Debug.Log("GAME OVER");
+			//Debug.Log("GAME OVER");
 
 		}
 
